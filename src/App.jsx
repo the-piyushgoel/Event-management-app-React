@@ -9,11 +9,11 @@ import Dashboard from "./pages/Dashboard";
 import Events from "./pages/Events";
 import Participants from "./pages/Participants";
 import Analytics from "./pages/Analytics";
-import Settings from "./pages/Settings";
 
 function App() {
 
   const [events, setEvents] = useState(() => {
+
     const saved =
       localStorage.getItem("events");
 
@@ -35,9 +35,6 @@ function App() {
         : [];
     });
 
-  const [darkMode, setDarkMode] =
-    useState(false);
-
   useEffect(() => {
 
     localStorage.setItem(
@@ -56,27 +53,14 @@ function App() {
 
   }, [participants]);
 
-  function toggleTheme() {
-    setDarkMode(!darkMode);
-  }
-
   return (
-    <div
-      className={
-        darkMode
-          ? "app-layout dark"
-          : "app-layout"
-      }
-    >
+    <div className="app-layout">
 
       <Sidebar />
 
       <div className="main-content">
 
-        <Navbar
-          darkMode={darkMode}
-          toggleTheme={toggleTheme}
-        />
+        <Navbar />
 
         <Routes>
 
@@ -108,7 +92,6 @@ function App() {
                 setParticipants={
                   setParticipants
                 }
-                events={events}
               />
             }
           />
@@ -123,11 +106,6 @@ function App() {
                 }
               />
             }
-          />
-
-          <Route
-            path="/settings"
-            element={<Settings />}
           />
 
         </Routes>
