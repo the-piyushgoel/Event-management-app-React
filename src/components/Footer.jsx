@@ -2,8 +2,8 @@ function Footer() {
   return (
     <div className="footer">
       <p>
-        © 2026 Event Management
-        Dashboard
+        Event Management
+        Dashboard made by Piyush Goel 
       </p>
     </div>
   );
