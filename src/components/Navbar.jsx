@@ -1,7 +1,4 @@
-function Navbar({
-  darkMode,
-  toggleTheme,
-}) {
+function Navbar() {
 
   return (
     <div className="navbar">
@@ -10,12 +7,8 @@ function Navbar({
         Event Management Dashboard
       </h2>
 
-      <div className="nav-right">
-
-        <div className="profile">
-          PG
-        </div>
-
+      <div className="profile">
+        PG
       </div>
 
     </div>
